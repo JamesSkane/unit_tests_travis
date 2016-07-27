@@ -1,10 +1,24 @@
 import unittest
 import numpy as np
-from fun_things import add
+from requester import add, url_to_csv, get_url
 from numpy.testing import assert_array_almost_equal
+import requests
+from urlparse import urlparse
+
+
+
 
 
 class TestNumComponentsReturned(unittest.TestCase):
+
+    def test_url(self):
+        response = get_url('https://archive.ics.uci.edu/ml/machine-learning-databases/car/car.data')
+        self.assertEqual(response, 200)
+
+    def test_bad_url(self):
+        with self.assertRaises(TypeError):
+            url_to_csv('https://archive.ics.uci.edu/ml/machine-learning-databases/car/')
+
 
     def test_add(self):
         res = add(3, 4)
@@ -26,4 +40,4 @@ class TestSomeOtherThing(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main(verbosity=20)
