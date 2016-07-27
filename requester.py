@@ -20,21 +20,21 @@ def check_data(address):
 def add(x, y):
     return x + y
 
-def url_to_csv(CSV_URL=None, name='csv_example'):
-    with requests.Session() as s:
-        download = s.get(CSV_URL)
-        decoded_content = download.content.decode('utf-8')
-        cr = csv.reader(decoded_content.splitlines(), delimiter=',')
-        try:
-            my_list = list(cr)
-        except UnicodeDecodeError:
-            yield TypeError
-        title = "{}.csv".format(name)
-        outputFile = open(title, mode='w')
-        outputWriter = csv.writer(outputFile)
-        #print(len(my_list))
-        for row in my_list:
-            outputWriter.writerow(row)
+# def url_to_csv(CSV_URL=None, name='csv_example'):
+#     with requests.Session() as s:
+#         download = s.get(CSV_URL)
+#         decoded_content = download.content.decode('utf-8')
+#         cr = csv.reader(decoded_content.splitlines(), delimiter=',')
+#         try:
+#             my_list = list(cr)
+#         except UnicodeDecodeError:
+#             yield TypeError
+#         title = "{}.csv".format(name)
+#         outputFile = open(title, mode='w')
+#         outputWriter = csv.writer(outputFile)
+#         #print(len(my_list))
+#         for row in my_list:
+#             outputWriter.writerow(row)
 
 
 
@@ -54,6 +54,19 @@ def url_to_df(url):
     return frame
 
 
+def url_to_csv(url,name='csv_example'):
+    print 'hi'
+    try:
+        print 'hello'
+        frame = pd.read_csv(url, header=None)
+        print(frame.head())
+        print url
+        result = frame.to_csv(name)
+        res = csv.reader(result.splitlines(), delimiter=',')
+        return res
+    except Exception:
+        print 'bye'
+        raise ValueError
 
 
 
