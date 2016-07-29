@@ -1,8 +1,7 @@
 import numpy as np
 import pandas as pd
 import requests, csv, unittest,warnings, os
-from numpy.testing import assert_array_almost_equal
-from requester import add, url_to_csv, get_url, url_to_df,batch_url_to_csv
+from requester import url_to_csv, get_url, url_to_df,batch_url_to_csv
 
 
 class TestNumComponentsReturned(unittest.TestCase):
