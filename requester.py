@@ -89,29 +89,3 @@ def url_to_df(url):
             raise RuntimeWarning('Number of rows in dataframe do not match the number of rows in csv when there is no header row in the csv.')
     except HTTPError:
         raise ValueError('The url entered cannot be parsed into a csv')
-
-def add(x, y):
-    return x + y
-
-
-
-
-
-
-
-#url_to_csv('https://archive.ics.uci.edu/ml/machine-learning-databazes/car', 'cars')
-#url_to_csv('http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary')
-#url_to_csv('https://www.yahoo.com/')
-#fname=url_to_csv(CSV_URL, 'balloons')
-
-
-# #CSV_URL = #'https://archive.ics.uci.edu/ml/machine-learning-databases/balloons/yellow-small.data'#'https://archive.ics.uci.edu/ml/machine-learning-databases/car'
-# #url_to_csv()
-# csv_lst = ['https://archive.ics.uci.edu/ml/machine-learning-databases/balloons/yellow-small.data',
-#             'http://samplecsvs.s3.amazonaws.com/Sacramentorealestatetransactions.csv']
-#
-# # csv_lst = ['http://samplecsvs.s3.amazonaws.com/Sacramentorealestatetransactions.csv',
-# #             'http://samplecsvs.s3.amazonaws.com/Sacramentorealestatetransactions.csv']
-# files = batch_url_to_csv(csv_lst,['balloons', 'sacramento'])
-# print files
-# #
