@@ -3,6 +3,10 @@ pandas==0.18.1
 python-dateutil==2.5.3
 scikit-learn==0.17.1
 scipy==0.17.1
-csv
-requests
+csv==2.3
+requests==2.10
+os==2.3
+urllib2==2.7.9
+collections==2.7
+warnings==2.1
 
